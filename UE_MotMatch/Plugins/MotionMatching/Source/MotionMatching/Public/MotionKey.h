@@ -56,11 +56,11 @@ public:
 		float ComputeMotionKeyCost(const float Responsiveness, const float VelocityStrength, const float PoseStrength, const FTrajectoryData DesiredTrajectory, const TArray <FJointData> PresentJointData, const FVector PresentVel);
 
 
-#if WITH_EDITOR
+// #if WITH_EDITORONLY_DATA
 		//USE THIS WHEN REMOVING KEYS FROM THE EDITOR TO REBAKE THE NEXT KEYS INDEX
 		UPROPERTY(BlueprintReadOnly, Category = "MotionKeyHandle")
-			FName SrcAnimationName;
-#endif //WITH_EDITOR
+		FName SrcAnimationName;
+// #endif //WITH_EDITOR
 
 		
 		//////////////////////////

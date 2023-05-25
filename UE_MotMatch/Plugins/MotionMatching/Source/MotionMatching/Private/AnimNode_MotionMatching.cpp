@@ -320,7 +320,7 @@ void FAnimNode_MotionMatching::GetMotionData(TArray<FJointData>& OutJointData, F
 
 
 
-void FAnimNode_MotionMatching::GetBlendPose(const float DT, FTransform & OutRootMotion, FCompactPose & OutPose, FBlendedCurve & OutCurve, FStackCustomAttributes& CustomAttributes)
+void FAnimNode_MotionMatching::GetBlendPose(const float DT, FTransform & OutRootMotion, FCompactPose & OutPose, FBlendedCurve & OutCurve, UE::Anim::FStackAttributeContainer& CustomAttributes)
 {
 	const int32 NumPoses = m_Anims.Num();
 	OutRootMotion = FTransform::Identity;

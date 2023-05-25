@@ -142,5 +142,5 @@ private:
 	
 	void Compute();
 
-	void GetBlendPose(const float DT, FTransform& OutRootMotion, FCompactPose& OutPose, FBlendedCurve& OutCurve, FStackCustomAttributes& CustomAttributes);
+	void GetBlendPose(const float DT, FTransform& OutRootMotion, FCompactPose& OutPose, FBlendedCurve& OutCurve, UE::Anim::FStackAttributeContainer& CustomAttributes);
 };

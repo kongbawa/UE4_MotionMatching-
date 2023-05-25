@@ -226,7 +226,7 @@ void UMotCharacterMovementComponent::PerformMovement(float DeltaSeconds)
 				if (SkelMeshComp)
 				{
 					// Convert Local Space Root Motion to world space. Do it right before used by physics to make sure we use up to date transforms, as translation is relative to rotation.
-					RootMotionParams.Set(ConvertLocalRootMotionToWorld(RootMotionParams.GetRootMotionTransform()));
+					RootMotionParams.Set(ConvertLocalRootMotionToWorld(RootMotionParams.GetRootMotionTransform(), DeltaSeconds));
 				}
 
 				// Then turn root motion to velocity to be used by various physics modes.
@@ -296,7 +296,7 @@ void UMotCharacterMovementComponent::PerformMovement(float DeltaSeconds)
 		// Update character state based on change from movement
 		UpdateCharacterStateAfterMovement(DeltaSeconds);
 
-		if ((bAllowPhysicsRotationDuringAnimRootMotion || !HasAnimRootMotion()) && !CharacterOwner->IsMatineeControlled())
+		if ((bAllowPhysicsRotationDuringAnimRootMotion || !HasAnimRootMotion()) )
 		{
 			PhysicsRotation(DeltaSeconds);
 		}

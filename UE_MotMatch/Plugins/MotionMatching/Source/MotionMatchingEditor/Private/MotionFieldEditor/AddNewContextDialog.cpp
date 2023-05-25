@@ -42,7 +42,7 @@
 
 #include "STextBlock.h"
 #include "SBox.h"
-
+#include "MotionFieldEditor.h"
 #define LOCTEXT_NAMESPACE "MotionMatchingEditor"
 
 namespace MyAssetShortcutConstants

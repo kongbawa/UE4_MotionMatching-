@@ -16,7 +16,7 @@ class USkeleton;
 struct FMotionExtractionContext;
 
 
-#if WITH_EDITOR
+#if WITH_EDITORONLY_DATA
 USTRUCT()
 struct FTagRange
 {
@@ -69,7 +69,7 @@ private:
 		TArray <FString> Tags;
 	
 
-#if WITH_EDITOR
+#if WITH_EDITORONLY_DATA
 	/////-------------One Per SrcAnim
 	UPROPERTY()
 	TArray <FTagHelper> TagHelpers;

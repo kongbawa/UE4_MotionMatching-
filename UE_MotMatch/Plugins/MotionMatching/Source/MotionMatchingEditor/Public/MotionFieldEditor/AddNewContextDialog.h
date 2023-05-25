@@ -9,7 +9,7 @@
 #include "Widgets/SCompoundWidget.h"
 #include "Engine/Texture2D.h"
 #include "IDetailsView.h"
-
+#include "ContentBrowserDelegates.h"
 
 #include "Layout/Visibility.h"
 #include "Widgets/SWidget.h"

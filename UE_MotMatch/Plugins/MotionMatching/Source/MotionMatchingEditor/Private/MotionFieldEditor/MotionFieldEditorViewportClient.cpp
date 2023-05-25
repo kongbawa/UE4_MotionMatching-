@@ -17,7 +17,7 @@
 #include "AssetEditorModeManager.h"
 
 
-#include "Classes/AnimPreviewInstance.h"
+#include "AnimPreviewInstance.h"
 
 #include "Animation/DebugSkelMeshComponent.h"
 #include "Components/PoseableMeshComponent.h"
@@ -47,9 +47,9 @@
 #define LOCTEXT_NAMESPACE "MotionFieldEditor"
 
 FMotionFieldEditorViewportClientRoot::FMotionFieldEditorViewportClientRoot(const TWeakPtr<class SEditorViewport>& InEditorViewportWidget)
-	: FEditorViewportClient(new FAssetEditorModeManager(), nullptr, InEditorViewportWidget)
+	: FEditorViewportClient(nullptr, nullptr, InEditorViewportWidget)
 {
-	bOwnsModeTools = true;
+	// bOwnsModeTools = true;
 
 
 	//ModifyCheckerboardTextureColors();
@@ -78,7 +78,8 @@ void FMotionFieldEditorViewportClient::RequestFocusOnSelection(bool bInstant)
 // FMotionFieldEditorViewportClient
 
 FMotionFieldEditorViewportClient::FMotionFieldEditorViewportClient(const TAttribute<UMotionField*>& InMotionFieldBeingEdited, TWeakPtr<FMotionFieldEditor> InMotionFieldEditorPtr)
-	:MotionFieldEditorPtr(InMotionFieldEditorPtr)
+	:FMotionFieldEditorViewportClientRoot(nullptr),
+	MotionFieldEditorPtr(InMotionFieldEditorPtr)
 {
 	MotionFieldBeingEdited = InMotionFieldBeingEdited;
 	//MotionFieldBeingEditedLastFrame = MotionFieldBeingEdited.Get();

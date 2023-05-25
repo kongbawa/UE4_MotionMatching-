@@ -25,7 +25,7 @@
 
 #include "Animation/DebugSkelMeshComponent.h"
 
-#include "Classes/AnimPreviewInstance.h"
+#include "AnimPreviewInstance.h"
 
 #include "SContextList.h"
 
@@ -140,6 +140,7 @@ void SMotionFieldEditorViewport::BindCommands()
 
 TSharedRef<FEditorViewportClient> SMotionFieldEditorViewport::MakeEditorViewportClient()
 {
+	// EditorViewportClient = MakeShared<FMotionFieldEditorViewportClient>(MotionFieldBeingEdited, MotionFieldEditorPtr);
 	EditorViewportClient = MakeShareable(new FMotionFieldEditorViewportClient(MotionFieldBeingEdited, MotionFieldEditorPtr));
 
 	return EditorViewportClient.ToSharedRef();
@@ -307,7 +308,7 @@ void FMotionFieldEditor::UnregisterTabSpawners(const TSharedRef<class FTabManage
 
 void FMotionFieldEditor::InitMotionFieldEditor(const EToolkitMode::Type Mode, const TSharedPtr< class IToolkitHost >& InitToolkitHost, class UMotionField* InitMotionField)
 {
-	FAssetEditorManager::Get().CloseOtherEditors(InitMotionField, this);
+	GEditor->GetEditorSubsystem<UAssetEditorSubsystem>()->CloseOtherEditors(InitMotionField, this);
 	MotionFieldBeingEdited = InitMotionField;
 
 	CurrentExtractionContextIndex = INDEX_NONE;

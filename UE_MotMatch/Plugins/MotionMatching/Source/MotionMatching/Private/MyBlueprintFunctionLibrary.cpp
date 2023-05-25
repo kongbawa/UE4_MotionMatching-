@@ -11,7 +11,7 @@ void UMyBlueprintFunctionLibrary::PoseGetTest(const UAnimSequence * InSequence, 
 	FBlendedCurve BldCurve = FBlendedCurve();
 	FAnimExtractContext ExtracContex = FAnimExtractContext(AtTime, bExtractRootMotion);
 	*/
-	int Num = InSequence->GetAnimationTrackNames().Num();
+	// int Num = InSequence->GetAnimationTrackNames().Num();
 	FTransform OutTM = FTransform::Identity;
 
 	InSequence->GetBoneTransform(OutTM, 0, AtTime, false);
